@@ -14,11 +14,16 @@ const Index = ({ posts }: Props) => {
       <h1>All Posts</h1>
       <ul>
         {posts.map((post) => (
-          <li key={post.slug}>
-            <a href={`/blog/${post.slug}`}>
-              {post.title}
-            </a>
-          </li>
+          <ul key={post.slug}>
+            <li><a href={`/blog/${post.slug}`}>{post.slug}</a></li>
+            <li><mark>{post.title}</mark></li>
+            {/* <li><mark>{post.excerpt}</mark></li> */}
+            <li><mark>{post.date}</mark></li>
+            <li><mark>{post.slug}</mark></li>
+            {/* <li><mark>{post.author}</mark></li> */}
+            {/* <li><mark>{post.content}</mark></li> */}
+            {/* <li><mark>{post.ogImage}</mark></li> */}
+          </ul>
         ))}
       </ul>
     </Layout>
@@ -27,8 +32,13 @@ const Index = ({ posts }: Props) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = getAllPosts([
+    'title',
+    'excerpt',
+    'date',
     'slug',
-    'title', // Include other fields as needed
+    'author',
+    'content',
+    'ogImage',
   ]);
 
   return {

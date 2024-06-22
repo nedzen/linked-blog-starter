@@ -61,12 +61,12 @@ function rewriteLinkNodes (node, linkNodeMapping: Map<string, any>, currSlug) {
     const noteCardNode = linkNodeMapping[slug]
     if (noteCardNode) {
       const anchorNode = {...node}
-      anchorNode.properties.className = 'internal-link'
-      node.tagName = 'span'
-      node.properties = { className: 'internal-link-container' }
+      // anchorNode.properties.className = 'internal-link'
+      // node.tagName = 'span'
+      // node.properties = { className: 'internal-link-container' }
       node.children = [
         anchorNode,
-        noteCardNode
+        // noteCardNode
       ]
     }
   }

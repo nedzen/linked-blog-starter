@@ -16,8 +16,8 @@ const Backlinks = ({ backlinks }: Props) => {
       {Object.keys(backlinks).map((slug) => {
         const post = backlinks[slug]
         return (
-          <Link as={slug} href="[...slug]" className="col-span-1">
-            <NotePreview title={post.title} content={post.excerpt} />
+          <Link as={slug} href="[...slug]" className="col-span-1"> {post.title}
+            {/* <NotePreview title={post.title} content={post.excerpt} /> */}
           </Link>
         )
       })}
