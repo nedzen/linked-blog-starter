@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import { getPostBySlug, getAllPosts, getLinksMapping } from '../lib/api'
-import { markdownToHtml } from '../lib/markdownToHtml'
-import type PostType from '../interfaces/post'
+import { getPostBySlug, getAllPosts, getLinksMapping } from '../../lib/api'
+import { markdownToHtml } from '../../lib/markdownToHtml'
+import type PostType from '../../interfaces/post'
 import path from 'path'
-import PostSingle from '../components/blog/post-single'
-import Layout from '../components/misc/layout'
+import PostSingle from '../../components/blog/post-single'
+import Layout from '../../components/misc/layout'
 import { NextSeo } from 'next-seo'
 
 type Items = {
